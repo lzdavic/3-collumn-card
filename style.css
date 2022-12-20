@@ -6,12 +6,10 @@
     --very-dark-cyan: hsl(179, 100%, 13%);
     --transparent-white: hsla(0, 0%, 100%, 0.5);
     --very-light-gray: hsl(0, 0%, 95%);
-    --transition-time: 400ms
+    --transition-time: 200ms ease
 }
 
 * {
-    margin: 0;
-    padding: 0;
     font-size: 0.94rem;
     font-family: 'Lexend Deca', sans-serif;
     color: var(--very-light-gray);
@@ -31,16 +29,21 @@
     display: none;
 }
 
+/* ========= */
 /* placement */
+/* ========= */
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     background: var(--very-light-gray);
 }
 
-/* card */
+/* ================= */
+/* commom card style */
+/* ================= */
 
 .columns__wrapper {
     display: flex;
@@ -78,19 +81,32 @@ body {
     border-radius: 2em;
     background: var(--very-light-gray);
     border: 3px solid transparent;
+    transition: var(--transition-time);
 }
 
+/* ================= */
 /* column 1 - sedans */
+/* ================= */
 
 .card-column_1 {
     background-color: var(--bright-orange);
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
 }
 
 .card__button_1 {
     color: var(--bright-orange);
 }
 
+.card__button_1:active {
+    color: var(--very-light-gray);
+    border: 3px solid var(--very-light-gray);
+    background-color: var(--bright-orange);
+}
+
+/* ============== */
 /* column 2 - suv */
+/* ============== */
 
 .card-column_2 {
     background-color: var(--dark-cyan);
@@ -100,10 +116,20 @@ body {
     color: var(--dark-cyan);
 }
 
+.card__button_2:active {
+    color: var(--very-light-gray);
+    border: 3px solid var(--very-light-gray);
+    background-color: var(--dark-cyan);
+}
+
+/* ================= */
 /* column 3 - luxury */
+/* ================= */
 
 .card-column_3 {
     background-color: var(--very-dark-cyan);
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
 }
 
 .card__button_3 {
@@ -114,4 +140,34 @@ body {
     color: var(--very-light-gray);
     border: 3px solid var(--very-light-gray);
     background-color: var(--very-dark-cyan);
+}
+
+/* ============== */
+/* Desktop Layout */
+/* ============== */
+
+@media screen and (min-width: 1024px) {
+    .columns__wrapper {
+        flex-direction: row;
+    }
+
+    .card__button:hover {
+        transform: scale(1.05);
+        cursor: pointer
+    }
+
+    /* ===================== */
+    /* border radius adjusts */
+    /* ===================== */
+
+    /* column 1 - sedan */
+    .card-column_1 {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1em;
+    }
+    /* column 3 - luxury */
+    .card-column_3 {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 1em;
+    }
 }
