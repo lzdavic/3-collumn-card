@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.5);
+    --very-light-gray: hsl(0, 0%, 95%);
+    --transition-time: 400ms
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 0.94rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--very-light-gray);
+}
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.attribution {
+    display: none;
+}
+
+/* placement */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--very-light-gray);
+}
+
+/* card */
+
+.columns__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 5em 1em;
+}
+
+.card-column {
+    width: 16em;
+    height: 25em;
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.card__icon {
+    max-width: 4em;
+}
+
+.card__title {
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+.card__content {
+    color: var(--transparent-white);
+    line-height: 1.5em;
+}
+
+.card__button {
+    padding: 0.9em 2em;
+    border-radius: 2em;
+    background: var(--very-light-gray);
+    border: 3px solid transparent;
+}
+
+/* column 1 - sedans */
+
+.card-column_1 {
+    background-color: var(--bright-orange);
+}
+
+.card__button_1 {
+    color: var(--bright-orange);
+}
+
+/* column 2 - suv */
+
+.card-column_2 {
+    background-color: var(--dark-cyan);
+}
+
+.card__button_2 {
+    color: var(--dark-cyan);
+}
+
+/* column 3 - luxury */
+
+.card-column_3 {
+    background-color: var(--very-dark-cyan);
+}
+
+.card__button_3 {
+    color: var(--very-dark-cyan);
+}
+
+.card__button_3:active {
+    color: var(--very-light-gray);
+    border: 3px solid var(--very-light-gray);
+    background-color: var(--very-dark-cyan);
+}
